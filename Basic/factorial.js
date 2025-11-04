@@ -1,7 +1,7 @@
 /*
 A factorial is a mathematical operation applied to a non-negative integer (a whole number 0 or greater). It is the product of all positive integers less than or equal to that number.
 The symbol for factorial is an exclamation mark (!).
-So, for a number 3$n$, the factorial (written as 4$n!$) is:$n! = n x (n-1) x (n-2) x ... x 1
+So, for a number n, the factorial (written as n!) is: n! = n x (n-1) x (n-2) x ... x 1
 A special case is the factorial of 0, which is defined as 1.0! = 1
 */
 

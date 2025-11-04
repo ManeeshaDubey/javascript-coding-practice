@@ -11,18 +11,39 @@ The number 2 is the only even prime number.
 */
 
 function prime(n) {
-  if (n == 1) {
-    console.log("Not a prime number because it has only 1 factor");
+  if (n <= 1) {
+    return false;
   }
+
+  // 2 is Even prime number
   if (n == 2) {
-    console.log("Even prime number");
+    return true;
   }
-  for (let i = 2; i <= n; i++) {
+  //All other even numbers are not prime
+  if (n % 2 == 0) {
+    return false;
+  }
+
+  /*
+you only need to check for divisors up to the square root of n.
+Why? Because factors come in pairs.
+For example, the factors of 36 are:
+1 * 36
+2 * 18
+3 * 12
+4 * 9
+6 * 6 (The square root is 6)
+...after this, the pairs just flip: 9 * 4, 12 * 3, etc.
+
+If a number n has a factor a that is bigger than Math.sqrt(n), it must also have a factor b that is smaller than Math.sqrt(n).
+   */
+
+  for (let i = 3; i <= Math.sqrt(n); i += 1) {
     if (n % i == 0) {
-      console.log("Not a prime number");
+      return false;
     }
   }
-  return { prime: false };
+  return true;
 }
 
-console.log(prime(2));
+console.log(prime(54));
